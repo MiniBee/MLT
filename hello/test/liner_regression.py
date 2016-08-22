@@ -24,7 +24,6 @@ def get_data(file_name):
 
     return X_parameter, Y_parameter    
 
-# Function for Fitting our data to Linear model
 def linear_model_main(X_parameters,Y_parameters,predict_value):
     regr = linear_model.LinearRegression()
     regr.fit(X_parameters,Y_parameters)
