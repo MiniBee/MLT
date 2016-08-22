@@ -26,13 +26,12 @@ def get_data(file_name):
 
 # Function for Fitting our data to Linear model
 def linear_model_main(X_parameters,Y_parameters,predict_value):
-    # Create linear regression object
     regr = linear_model.LinearRegression()
     regr.fit(X_parameters,Y_parameters)
     predict_outcome = regr.predict(predict_value)
     predictions = {}
-    predictions['intercept'] = regr.intercept_
-    predictions['coefficient'] = regr.coef_
+    predictions['intercept'] = regr.intercept_                #theta0
+    predictions['coefficient'] = regr.coef_                   #theta1,2,3
     predictions['predicted_value'] = predict_outcome
     return predictions
 
