@@ -12,6 +12,10 @@ def get_data(file_name):
     Y_parameter = []
     for line in lines.readline():
         x = line.strip().split(a)
-        
-    
+        xflt = []
+        for xApp in x[:-1]:
+            xflt.append(float(xApp))
+        X_parameter.append(xflt)
+        Y_parameter.append(float(x[-1]))
+    return X_parameter, Y_parameter
 get_data('')
