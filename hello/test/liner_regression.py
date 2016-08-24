@@ -25,6 +25,7 @@ def get_data(file_name):
     return X_parameter, Y_parameter    
 
 def linear_model_main(X_parameters,Y_parameters,predict_value):
+#    用的最小二乘法
     regr = linear_model.LinearRegression()
     regr.fit(X_parameters,Y_parameters)
     predict_outcome = regr.predict(predict_value)
@@ -36,16 +37,16 @@ def linear_model_main(X_parameters,Y_parameters,predict_value):
 
 
 X, Y = get_data(r'D:\Advertising.csv')
-print X
-# print Y
+print len(X)
+print len(Y)
 predictvalue = [232.1,8.6,8.7]
 # print linear_model_main(X, Y, predictvalue)
 
-Y_Predict = []
-for x in X:
-    Y_Predict.append(linear_model_main(X, Y, x).get('predicted_value'))
+# Y_Predict = []
+# for x in X:
+#     Y_Predict.append(linear_model_main(X, Y, x).get('predicted_value'))
 
-print Y_Predict
+# print Y_Predict
 
 
 
