@@ -59,8 +59,3 @@ ax  = fig.add_subplot(111)
 ax.plot(ws)  
 plt.show() 
 
-
-
-
-
-
