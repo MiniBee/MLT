@@ -12,7 +12,7 @@ def ridgeRegers(xMat, yMat, lam = 0.2):
     denom = xTx + numpy.eye(numpy.shape(xMat)[1])*lam
     if numpy.linalg.det(denom) ==0.0:  
         print "this matrix is singular, cannot do inverse"  
-        ws = numpy.linalg.pinv(denom)*(xMat.T*yMat)  
+        ws = numpy.linalg.pinv(denom)*(xMat.T*yMat)
     
     ws = denom.I * xMat.T * yMat
     return ws
