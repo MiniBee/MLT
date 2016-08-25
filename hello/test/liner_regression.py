@@ -6,8 +6,8 @@ Created on 2016年8月22日
 线性回归算法
 '''
 import pandas
-import matplotlib.pyplot as plt
-from sklearn import datasets, linear_model
+from sklearn import datasets, linear_model, pipeline
+from sklearn import preprocessing 
 
 def get_data(file_name):
     data = pandas.read_csv(file_name)
@@ -22,16 +22,18 @@ def get_data(file_name):
         X_parameter.append(X_parameter_sub)
         Y_parameter.append(Sales)
 
-    return X_parameter, Y_parameter    
+    return X_parameter, Y_parameter
 
 def linear_model_main(X_parameters,Y_parameters,predict_value):
 #    用的最小二乘法
+#     regr = pipeline.Pipeline([('poly', preprocessing.PolynomialFeatures(degree=2)),  
+#                     ('linear', linear_model.LinearRegression(fit_intercept=False))])  
     regr = linear_model.LinearRegression()
     regr.fit(X_parameters,Y_parameters)
     predict_outcome = regr.predict(predict_value)
     predictions = {}
     predictions['intercept'] = regr.intercept_                #theta0
-    predictions['coefficient'] = regr.coef_                   #theta1,2,3
+    predictions['coefficient'] = regr.coef_                   #theta1,2,3...
     predictions['predicted_value'] = predict_outcome
     return predictions
 

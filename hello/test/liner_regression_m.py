@@ -42,7 +42,6 @@ def lwlr(testPoint,xArr,yArr,k=1.0):
         print "This matrix is singular, cannot do inverse"
         return
     ws = xTx.I * (xMat.T * (weights * yMat))
-    print ws
     return testPoint*ws
 
 file_name = r'D:\data\abalone\m0f1i2Dataset.data'
