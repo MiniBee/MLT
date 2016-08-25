@@ -7,7 +7,6 @@ Created on 2016年8月24日
 import numpy
 from sklearn import datasets, linear_model
 
-
 def get_data(file_name):
     data = open(file_name)
     X_parameter = []
