@@ -44,16 +44,16 @@ def get_data(file_name):
 
 def ridgeTest(xMat, yMat):
     numTestPts = 30  
-    wMat       = numpy.zeros((numTestPts, numpy.shape(xMat)[1]))  
-    for i in range(numTestPts):  
-        ws = ridgeRegers(xMat, yMat, numpy.exp(i-10))  
-        wMat[i,:] = ws.T  
-    return wMat  
+    wMat = numpy.zeros((numTestPts, numpy.shape(xMat)[1]))  
+    for i in range(numTestPts):
+        ws = ridgeRegers(xMat, yMat, numpy.exp(i-10))
+        wMat[i,:] = ws.T
+    return wMat
 
 xArr, yArr = get_data(r'D:\data\abalone\m0f1i2Dataset.data')
 xMat, yMat = standard_data(xArr, yArr)
 ws = ridgeTest(xMat, yMat)
- 
+
 fig = plt.figure()     
 ax  = fig.add_subplot(111)  
 ax.plot(ws)  

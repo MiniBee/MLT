@@ -4,6 +4,8 @@ Created on 2016年8月25日
 
 @author: Administrator
 
+数据必须为数字
+
 '''
 from sklearn import tree
 import liner_regression_m

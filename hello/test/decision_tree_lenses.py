@@ -86,7 +86,7 @@ def classify(myTree, labels, testVec):
                 classLabel = classify(secondDict[key], labels, testVec)
             else:
                 classLabel = secondDict[key]
-    return classLabel    
+    return classLabel
     
 def get_data(file_name):
     lines = open(file_name)
