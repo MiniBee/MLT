@@ -27,8 +27,9 @@ x_train, y_train = get_data(file_name)
 logreg = linear_model.LogisticRegression(C=1e5, solver='lbfgs', multi_class='multinomial')
 logreg.fit(x_train, y_train)
 x_test, y_test = get_data(r'D:\data\logisticRegression\testSet3.txt')
+logreg_prob = logreg.predict_proba(x_test)
 logreg_pred = logreg.predict(x_test)
-print logreg_pred
+print logreg_prob, logreg_pred
 
 
 

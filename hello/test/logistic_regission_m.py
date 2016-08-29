@@ -63,7 +63,6 @@ def show(dataMat, labelMat, weights):
     ax.scatter(xcoord1, ycoord1, s=30, c="red", marker="s")
     ax.scatter(xcoord2, ycoord2, s=30, c="green")
     x = numpy.arange(min_x, max_x, 0.1)
-    print '==>',x
     y = (-weights[0] - weights[1]*x) / weights[2]
     
     ax.plot(x, y)
@@ -89,18 +88,18 @@ def get_data(file_name):
     return numpy.mat(dataMat), numpy.mat(labelMat).T
 
 if __name__ == '__main__':
-    dataMat, labelMat = get_data(r'D:\data\logisticRegression\testSet2.txt')
-    weights = betterStocGradAscent(dataMat, labelMat, numIter=160)
-#     print weights
+    dataMat, labelMat = get_data(r'D:\data\logisticRegression\testSet.txt')
+    weights = betterStocGradAscent(dataMat, labelMat, numIter=80)
+    print weights
 #     weights = stocGradAscent(dataMat, labelMat, 0.01)
-#     show(dataMat, labelMat, weights)
-    dataTest, labelTest = get_data(r'D:\data\logisticRegression\testSet2.txt')
-    m = numpy.shape(dataTest)[0]
+#     dataTest, labelTest = get_data(r'D:\data\logisticRegression\testSet2.txt')
+    m = numpy.shape(dataMat)[0]
     count = 0.0
     for i in range(m):
-        if classifyVector(dataTest[i], weights) == labelTest[i][0]:
+        if classifyVector(dataMat[i], weights) == labelMat[i][0]:
             count += 1
     print count /m
+    show(dataMat, labelMat, weights)
     
     
     
