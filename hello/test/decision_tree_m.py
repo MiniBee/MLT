@@ -25,9 +25,9 @@ def splitDataSet(dataSet, axis, value):
     retDataSet = []
     for featVal in dataSet:
         if featVal[axis] == value:
-            reducedFeatVec = featVal[:axis]  
-            reducedFeatVec.extend(featVal[axis+1:])  
-            retDataSet.append(reducedFeatVec)  
+            reducedFeatVec = featVal[:axis]
+            reducedFeatVec.extend(featVal[axis+1:])
+            retDataSet.append(reducedFeatVec)
     return retDataSet
 
 def chooseBestFeatureToSplit(dataSet):
